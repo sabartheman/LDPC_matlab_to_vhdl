@@ -1,0 +1,4 @@
+
+Warnings: 
+
+File: /home/sky/Documents/MATLAB/Low_density_parity_code/call_custom_exp.m, line : 2, column : 19. Could not generate math replacement function for 'custom_fnc'. Approximation supports only scalar inputs, non-scalar inputs(1x7) found for 'x'.

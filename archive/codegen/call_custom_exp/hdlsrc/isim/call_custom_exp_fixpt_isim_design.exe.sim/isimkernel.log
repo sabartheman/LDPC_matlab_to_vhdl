@@ -1,0 +1,28 @@
+Command line:
+   call_custom_exp_fixpt_isim_design.exe
+     -simmode  tcl
+     -simrunnum  0
+     -socket  34545
+
+Sun Apr  7 16:50:40 2019
+
+
+ Elaboration Time: 0.05 sec
+
+ Current Memory Usage: 165.261 Meg
+
+ Total Signals          : 34
+ Total Nets             : 215
+ Total Signal Drivers   : 32
+ Total Blocks           : 8
+ Total Primitive Blocks : 7
+ Total Processes        : 33
+ Total Traceable Variables  : 17
+ Total Scalar Nets and Variables : 15555
+
+ Total Simulation Time: 0.15 sec
+
+ Current Memory Usage: 240.927 Meg
+
+Sun Apr  7 16:50:41 2019
+

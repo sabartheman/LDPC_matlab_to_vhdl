@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="synth_1" LaunchDir="/home/sky/Documents/MATLAB/Low_density_parity_code/codegen/call_custom_exp/hdlsrc/vivado_prj/call_custom_exp_fixpt_vivado.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+</Runs>
+

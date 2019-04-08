@@ -1,0 +1,314 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sun Apr  7 16:38:42 2019
+# Process ID: 1346
+# Current directory: /home/sky/Documents/MATLAB/Low_density_parity_code/archive/codegen/call_custom_exp/hdlsrc/vivado_prj
+# Command line: vivado -mode batch -source call_custom_exp_fixpt_Xilinx_Vivado_run.tcl
+# Log file: /home/sky/Documents/MATLAB/Low_density_parity_code/archive/codegen/call_custom_exp/hdlsrc/vivado_prj/vivado.log
+# Journal file: /home/sky/Documents/MATLAB/Low_density_parity_code/archive/codegen/call_custom_exp/hdlsrc/vivado_prj/vivado.jou
+#-----------------------------------------------------------
+source call_custom_exp_fixpt_Xilinx_Vivado_run.tcl
+# set myTool "Xilinx Vivado 2017.4"
+# set myProject "call_custom_exp_fixpt_vivado"
+# set myProjectFile "call_custom_exp_fixpt_vivado.xpr"
+# set myTopLevelEntity "call_custom_exp_fixpt"
+# set Family "Artix7"
+# set Device "xc7a200tl"
+# set Package "fbg676"
+# set Speed "-2L"
+# set MapTimePathNumber "3"
+# set MapTimeAdvAnalysis "True"
+# set PARTimePathNumber "3"
+# set PARTimeAdvAnalysis "True"
+# puts "### Open existing $myTool project \/home\/sky\/Documents\/MATLAB\/Low_density_parity_code\/archive\/codegen\/call_custom_exp\/hdlsrc\/vivado_prj\/call_custom_exp_fixpt_vivado.xpr"
+### Open existing Xilinx Vivado 2017.4 project /home/sky/Documents/MATLAB/Low_density_parity_code/archive/codegen/call_custom_exp/hdlsrc/vivado_prj/call_custom_exp_fixpt_vivado.xpr
+# open_project ${myProject}
+Scanning sources...
+Finished scanning sources
+# puts "### Running Synthesis in $myTool ..."
+### Running Synthesis in Xilinx Vivado 2017.4 ...
+# if { [llength [get_runs synth_1] ] > 0 } { reset_run synth_1}
+# launch_runs synth_1 -force
+[Sun Apr  7 16:38:49 2019] Launched synth_1...
+Run output will be captured here: /home/sky/Documents/MATLAB/Low_density_parity_code/archive/codegen/call_custom_exp/hdlsrc/vivado_prj/call_custom_exp_fixpt_vivado.runs/synth_1/runme.log
+# wait_on_run synth_1
+[Sun Apr  7 16:38:49 2019] Waiting for synth_1 to finish...
+
+*** Running vivado
+    with args -log call_custom_exp_fixpt.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source call_custom_exp_fixpt.tcl
+
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source call_custom_exp_fixpt.tcl -notrace
+Command: synth_design -top call_custom_exp_fixpt -part xc7a200tlfbg676-2L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200tl'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200tl'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 2230 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1209.996 ; gain = 65.000 ; free physical = 8379 ; free virtual = 11249
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'call_custom_exp_fixpt' [/home/sky/Documents/MATLAB/Low_density_parity_code/archive/codegen/call_custom_exp/hdlsrc/call_custom_exp_fixpt.vhd:37]
+INFO: [Synth 8-256] done synthesizing module 'call_custom_exp_fixpt' (1#1) [/home/sky/Documents/MATLAB/Low_density_parity_code/archive/codegen/call_custom_exp/hdlsrc/call_custom_exp_fixpt.vhd:37]
+WARNING: [Synth 8-3330] design call_custom_exp_fixpt has an empty top module
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[13] driven by constant 0
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[12] driven by constant 0
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[11] driven by constant 0
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[10] driven by constant 0
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[9] driven by constant 0
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[8] driven by constant 0
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[7] driven by constant 0
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[6] driven by constant 0
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[5] driven by constant 0
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[4] driven by constant 0
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[3] driven by constant 0
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[2] driven by constant 0
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[1] driven by constant 0
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[0] driven by constant 0
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[13]
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[12]
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[11]
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[10]
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[9]
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[8]
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[7]
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[6]
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[5]
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[4]
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[3]
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[2]
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[1]
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[0]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1252.527 ; gain = 107.531 ; free physical = 8395 ; free virtual = 11265
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1252.527 ; gain = 107.531 ; free physical = 8390 ; free virtual = 11261
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a200tlfbg676-2L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1260.531 ; gain = 115.535 ; free physical = 8390 ; free virtual = 11261
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a200tlfbg676-2L
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1268.539 ; gain = 123.543 ; free physical = 8388 ; free virtual = 11258
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 740 (col length:100)
+BRAMs: 730 (col length: RAMB18 100 RAMB36 50)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3330] design call_custom_exp_fixpt has an empty top module
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[13] driven by constant 0
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[12] driven by constant 0
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[11] driven by constant 0
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[10] driven by constant 0
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[9] driven by constant 0
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[8] driven by constant 0
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[7] driven by constant 0
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[6] driven by constant 0
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[5] driven by constant 0
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[4] driven by constant 0
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[3] driven by constant 0
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[2] driven by constant 0
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[1] driven by constant 0
+WARNING: [Synth 8-3917] design call_custom_exp_fixpt has port y[0] driven by constant 0
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[13]
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[12]
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[11]
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[10]
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[9]
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[8]
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[7]
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[6]
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[5]
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[4]
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[3]
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[2]
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[1]
+WARNING: [Synth 8-3331] design call_custom_exp_fixpt has unconnected port x[0]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 1397.359 ; gain = 252.363 ; free physical = 8230 ; free virtual = 11100
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 1397.359 ; gain = 252.363 ; free physical = 8230 ; free virtual = 11100
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 1406.375 ; gain = 261.379 ; free physical = 8228 ; free virtual = 11099
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 1406.375 ; gain = 261.379 ; free physical = 8228 ; free virtual = 11099
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 1406.375 ; gain = 261.379 ; free physical = 8228 ; free virtual = 11099
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 1406.375 ; gain = 261.379 ; free physical = 8228 ; free virtual = 11099
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 1406.375 ; gain = 261.379 ; free physical = 8228 ; free virtual = 11099
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 1406.375 ; gain = 261.379 ; free physical = 8228 ; free virtual = 11099
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 1406.375 ; gain = 261.379 ; free physical = 8228 ; free virtual = 11099
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |OBUF |    14|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |    14|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 1406.375 ; gain = 261.379 ; free physical = 8228 ; free virtual = 11099
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 58 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 1406.375 ; gain = 261.379 ; free physical = 8228 ; free virtual = 11099
+Synthesis Optimization Complete : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 1406.383 ; gain = 261.379 ; free physical = 8228 ; free virtual = 11099
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+9 Infos, 58 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 1490.398 ; gain = 358.773 ; free physical = 8187 ; free virtual = 11058
+INFO: [Common 17-1381] The checkpoint '/home/sky/Documents/MATLAB/Low_density_parity_code/archive/codegen/call_custom_exp/hdlsrc/vivado_prj/call_custom_exp_fixpt_vivado.runs/synth_1/call_custom_exp_fixpt.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file call_custom_exp_fixpt_utilization_synth.rpt -pb call_custom_exp_fixpt_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.11 . Memory (MB): peak = 1514.410 ; gain = 0.000 ; free physical = 8175 ; free virtual = 11055
+INFO: [Common 17-206] Exiting Vivado at Sun Apr  7 16:39:17 2019...
+[Sun Apr  7 16:39:18 2019] synth_1 finished
+wait_on_run: Time (s): cpu = 00:00:22 ; elapsed = 00:00:28 . Memory (MB): peak = 1145.000 ; gain = 0.000 ; free physical = 8640 ; free virtual = 11519
+# puts "### Synthesis Complete."
+### Synthesis Complete.
+# puts "### Close $myTool project."
+### Close Xilinx Vivado 2017.4 project.
+# close_project
+INFO: [Common 17-206] Exiting Vivado at Sun Apr  7 16:39:18 2019...

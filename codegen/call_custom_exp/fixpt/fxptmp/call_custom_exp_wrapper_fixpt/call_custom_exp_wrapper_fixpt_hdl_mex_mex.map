@@ -1,0 +1,21 @@
+MEX {
+	global:
+		mexFunction;
+		mexfilerequiredapiversion;
+		emlrtMexFcnProperties;
+		call_custom_exp_wrapper_fixpt;
+		call_custom_exp_fixpt_logger;
+		emxEnsureCapacity_int16_T;
+		emxEnsureCapacity_uint16_T;
+		emxFreeStruct_struct0_T;
+		emxFree_int16_T;
+		emxFree_uint16_T;
+		emxInitStruct_struct0_T;
+		emxInit_int16_T;
+		emxInit_uint16_T;
+		call_custom_exp_wrapper_fixpt_hdl_mex_initialize;
+		call_custom_exp_wrapper_fixpt_hdl_mex_terminate;
+		call_custom_exp_wrapper_fixpt_hdl_mex_atexit;
+	local:
+		*;
+};

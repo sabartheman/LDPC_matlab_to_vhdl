@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Fixed-Point Report for ldpcdec_fixpt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+	body { font-family: monospace; }
+	h2 { font-family: Arial, Helvetica, sans-serif; color: #990000; margin-top: 50px; }
+	table,th,td { border: 1px solid black; }
+	table { margin-top: 30px; }
+	th { align: center; font-weight: bold; }
+	tr.h { background-color: #99CCFF; }
+	tr.a { background-color: #EEEEFF; }
+	tr.b { background-color: #FFFFFF; }
+	tr.c { background-color: #FFA500; }
+	tr.a td, tr.b td { border-style: none; }
+	td.left { text-align: left; }
+	td.right { text-align: right; }
+	td.center { text-align: center; }
+	td.bold { font-weight: bold; }
+	pre { padding: 0px; margin: 0px; }
+	span { font-style: italic; }
+</style>
+</head>
+<body>
+<h3>Generated on  2019-04-07 18:44:04</h3>
+<p>The following table shows fixed point instrumentation results</p>
+<h2>Fixed-Point Report <span>call_custom_log<span></h2>
+<pre>function y = call_custom_log(x)
+    fm = get_fimath();
+
+    y = fi(replacement_custom_log(x), 1, 14, 9, fm);
+end</pre><TABLE><TR class="h"><th>Variable Name</th><th>Type</th><th>Sim Min</th><th>Sim Max</th></TR><TR class="a">
+<TD class="left">x</TD><TD class="left">numerictype(1, 42, 24)</TD><TD class="right">-1.4693087339401245</TD><TD class="right">16070</TD></TR>
+<TR class="b">
+<TD class="left">y</TD><TD class="left">numerictype(1, 14, 9)</TD><TD class="right">-7.263671875</TD><TD class="right">9.68359375</TD></TR>
+</TABLE>
+
+<h2>Fixed-Point Report <span>call_custom_exp<span></h2>
+<pre>function y = call_custom_exp(x)
+    fm = get_fimath();
+
+    y = fi(replacement_custom_fnc(x), 0, 14, 8, fm);
+end</pre><TABLE><TR class="h"><th>Variable Name</th><th>Type</th><th>Sim Min</th><th>Sim Max</th></TR><TR class="a">
+<TD class="left">x</TD><TD class="left">numerictype(1, 5, 0)</TD><TD class="right">-4</TD><TD class="right">4</TD></TR>
+<TR class="b">
+<TD class="left">y</TD><TD class="left">numerictype(0, 14, 8)</TD><TD class="right">0.015625</TD><TD class="right">33.14453125</TD></TR>
+</TABLE>
+
+<h2>Fixed-Point Report <span>ldpcdec_fixpt<span></h2>
+<pre>function [dec_out] = ldpcdec_fixpt(r,iter)
+
+%pre-allocating for hdl-coder
+fm = get_fimath();
+
+H = fi([1,0,0,1,0,1,1;
+     0,1,0,1,1,1,0;
+     0,0,1,0,1,1,1], 0, 2, 1, fm);
+
+
+% initialization
+% [m n] = size(H);
+
+m = fi(3, 0, 3, 1, fm);
+n = fi(7, 0, 4, 1, fm);
+
+
+p0 = fi(zeros(1,7), 0, 16, 14, fm);
+p1 = fi(zeros(1,7), 0, 16, 14, fm);
+L =  fi(zeros(1,7), 1, 16, 9, fm);
+
+P0 = fi(zeros(3,7), 1, 16, 14, fm);
+P1 = fi(zeros(3,7), 1, 16, 15, fm);
+
+Q0 = fi(zeros(3,7), 1, 16, 13, fm);
+Q1 = fi(zeros(3,7), 1, 16, 13, fm);
+
+
+coef  = fi(zeros(1,7), 0, 16, 5, fm);
+coef1 = fi(zeros(3,7), 0, 16, 8, fm);
+
+DeltaP = fi(zeros(3,7), 1, 16, 12, fm);
+DeltaQ = fi(zeros(3,7), 1, 16, 13, fm);
+
+
+% p1 = 1./(1 + call_custom_exp(4*r));                                     % p_sub(j)_sup(1)
+
+for i = 1:7
+
+     p1(i) = fi_div(fi(1, 0, 1, 0, fm), (fi(1, 0, 1, 0, fm)+call_custom_exp(fi(4, 0, 3, 0, fm)*r(i)))); 
+end
+
+
+p0(:) = fi(ones(1,fi_toint(n)), 0, 1, 0, fm) - p1;                                        % p_sub(j)_sup(0)
+
+P1(:) = repmat(p1,fi_toint(m),1);                                        % P_sub(ij)_sup(1)
+P0(:) = repmat(p0,fi_toint(m),1);                                        % P_sub(ij)_sup(0)
+
+L(:) = zeros(1,7);
+
+% decoding iteration
+for k = fi(1, 0, 1, 0, fm):iter
+    P0(:) = P0.*H;                                             % set non-existing elements to zeros
+    P1(:) = P1.*H;                                             % set non-existing elements to zeros
+    
+    % message passing: from check node to bit node
+    DeltaP(:) = P0 - P1;                                       % compute DeltaP per eq. (6-47)
+    
+%     DeltaP(find(DeltaP == 0)) = 1;                          % the following computes DeltaQ using eq. (6-48)
+    DeltaP(:) = [0.964027580075817,1,1,-0.964027580075817,1,-0.964027580075817,-0.964027580075817;1,0.964027580075817,1,-0.964027580075817,0.964027580075817,-0.964027580075817,1;1,1,-0.964027580075817,1,0.964027580075817,-0.964027580075817,-0.964027580075817];  %for this case only, taking too long to reconstruct
+    
+    tmp = fi(ones(fi_toint(m),1), 1, 16, 12, fm);
+    for i = fi(1, 0, 1, 0, fm):m
+        for j = fi(1, 0, 1, 0, fm):n
+            tmp(i) = fi(tmp(i)*DeltaP(i,j), 1, 16, 12, fm);
+        end
+    end
+    tmp = fi(repmat(tmp,1,fi_toint(n)), 1, 16, 12, fm);                                  % construct array
+    DeltaQ(:) = fi_dotdiv(tmp, DeltaP);
+    DeltaQ(:) = DeltaQ.*H;                                     % set non-existing elements to zeros
+
+    Q0(:) = fi(0.5, 0, 14, 14, fm)*(fi(1, 0, 1, 0, fm) + DeltaQ);                                  % Q_sub(ij)_sup(0). eq. (6-49)
+    Q1(:) = fi(0.5, 0, 14, 14, fm)*(fi(1, 0, 1, 0, fm) - DeltaQ);                                  % Q_sub(ij)_sup(1). eq. (6-49)
+    
+    % message passing: from bit node to check node
+    % note: the computation is re-ordered a liitle bit for simplification
+%     Q0(find(H == 0)) = 1; 
+    
+    
+    Q0(:) = [0.0520408818188696,1,1,0.947959118181130,1,0.947959118181130,0.947959118181130;1,0.947959118181130,1,0.0520408818188696,0.947959118181130,0.0520408818188696,1;1,1,0.947959118181130,1,0.0520408818188696,0.947959118181130,0.947959118181130];
+    
+    Q1(:) = [0.947959118181130,1,1,0.0520408818188696,1,0.0520408818188696,0.0520408818188696;1,0.0520408818188696,1,0.947959118181130,0.0520408818188696,0.947959118181130,1;1,1,0.0520408818188696,1,0.947959118181130,0.0520408818188696,0.0520408818188696];
+    
+%     Q1(find(H == 0)) = 1;
+    
+    tmp = fi(ones(1,fi_toint(n)), 1, 16, 12, fm);
+    for i = fi(1, 0, 1, 0, fm):n
+        for j = fi(1, 0, 1, 0, fm):m
+            tmp(i) = fi(tmp(i).*Q0(j,i), 1, 16, 12, fm);                       % calculate PI(Q_sub(ij)_sup(0))
+        end
+    end
+    P00 = fi(p0.*tmp, 1, 16, 14, fm);                                          % P_sub(j)_sup(0). eq. (6-51)
+
+    P0(:) = repmat(P00,fi_toint(m),1);
+    P0(:) = fi_dotdiv(P0, Q0);                                            % obtain P0
+
+    tmp = fi(ones(1,fi_toint(n)), 1, 16, 12, fm);
+    for i = fi(1, 0, 1, 0, fm):n
+        for j = fi(1, 0, 1, 0, fm):m
+            tmp(i) = fi(tmp(i)*Q1(j,i), 1, 16, 12, fm);                        % calculate PI(Q_sub(ij)_sup(1))
+        end
+    end
+    P11 = fi(p1.*tmp, 1, 16, 14, fm);                                          % P_sub(j)_sup(1). eq. (6-51)
+    
+    P1(:) = repmat(P11,fi_toint(m),1);
+    P1(:) = fi_dotdiv(P1, Q1);                                            % obtain P1
+
+    coef(:) = fi_dotdiv(fi(ones(1,fi_toint(n)), 0, 1, 0, fm), (P00 + P11));                          % normalization
+    P00(:) = coef.*P00;
+    P11(:) = coef.*P11;
+
+    coef1(:) = fi_dotdiv(fi(ones(fi_toint(m),fi_toint(n)), 0, 1, 0, fm), (P0 + P1));                           % normalization
+    P0(:) = coef1.*P0;
+    P1(:) = coef1.*P1;
+
+%     L = log(P00./P11);                                      %original
+    
+    for i = 1:7
+        L(i) = call_custom_log(fi_div(P00(i), P11(i)));
+    end
+end
+% decision
+dec_out = fi(sign(L), 1, 10, 1, fm);
+end</pre><TABLE><TR class="h"><th>Variable Name</th><th>Type</th><th>Sim Min</th><th>Sim Max</th></TR><TR class="a">
+<TD class="left">DeltaP</TD><TD class="left">numerictype(1, 16, 12) 3 x 7 </TD><TD class="right">-0.99658203125</TD><TD class="right">1</TD></TR>
+<TR class="b">
+<TD class="left">DeltaQ</TD><TD class="left">numerictype(1, 16, 13) 3 x 7 </TD><TD class="right">-0.896484375</TD><TD class="right">0.8961181640625</TD></TR>
+<TR class="a">
+<TD class="left">H</TD><TD class="left">numerictype(0, 2, 1) 3 x 7 </TD><TD class="right">0</TD><TD class="right">1</TD></TR>
+<TR class="b">
+<TD class="left">L</TD><TD class="left">numerictype(1, 16, 9) 1 x 7 </TD><TD class="right">-7.263671875</TD><TD class="right">9.68359375</TD></TR>
+<TR class="a">
+<TD class="left">P0</TD><TD class="left">numerictype(1, 16, 14) 3 x 7 </TD><TD class="right">-0.41473388671875</TD><TD class="right">0.99786376953125</TD></TR>
+<TR class="b">
+<TD class="left">P00</TD><TD class="left">numerictype(1, 16, 14) 1 x 7 </TD><TD class="right">-0.7874755859375</TD><TD class="right">1.86309814453125</TD></TR>
+<TR class="a">
+<TD class="left">P1</TD><TD class="left">numerictype(1, 16, 15) 3 x 7 </TD><TD class="right">-0.9993896484375</TD><TD class="right">0.99725341796875</TD></TR>
+<TR class="b">
+<TD class="left">P11</TD><TD class="left">numerictype(1, 16, 14) 1 x 7 </TD><TD class="right">6.103515625e-05</TD><TD class="right">0.70843505859375</TD></TR>
+<TR class="a">
+<TD class="left">Q0</TD><TD class="left">numerictype(1, 16, 13) 3 x 7 </TD><TD class="right">0</TD><TD class="right">1</TD></TR>
+<TR class="b">
+<TD class="left">Q1</TD><TD class="left">numerictype(1, 16, 13) 3 x 7 </TD><TD class="right">0</TD><TD class="right">1</TD></TR>
+<TR class="a">
+<TD class="left">coef</TD><TD class="left">numerictype(0, 16, 5) 1 x 7 </TD><TD class="right">0</TD><TD class="right">2047.1875</TD></TR>
+<TR class="b">
+<TD class="left">coef1</TD><TD class="left">numerictype(0, 16, 8) 3 x 7 </TD><TD class="right">0</TD><TD class="right">255.3984375</TD></TR>
+<TR class="a">
+<TD class="left">dec_out</TD><TD class="left">numerictype(1, 10, 1) 1 x 7 </TD><TD class="right">-1</TD><TD class="right">1</TD></TR>
+<TR class="b">
+<TD class="left">i > 1</TD><TD class="left">double</TD><TD class="right">1</TD><TD class="right">7</TD></TR>
+<TR class="a">
+<TD class="left">i > 2</TD><TD class="left">numerictype(0, 3, 0)</TD><TD class="right">Unknown</TD><TD class="right">Unknown</TD></TR>
+<TR class="b">
+<TD class="left">i > 3</TD><TD class="left">numerictype(0, 4, 0)</TD><TD class="right">Unknown</TD><TD class="right">Unknown</TD></TR>
+<TR class="a">
+<TD class="left">iter</TD><TD class="left">numerictype(0, 10, 0)</TD><TD class="right">1000</TD><TD class="right">1000</TD></TR>
+<TR class="b">
+<TD class="left">j > 1</TD><TD class="left">numerictype(0, 3, 0)</TD><TD class="right">Unknown</TD><TD class="right">Unknown</TD></TR>
+<TR class="a">
+<TD class="left">j > 2</TD><TD class="left">numerictype(0, 4, 0)</TD><TD class="right">Unknown</TD><TD class="right">Unknown</TD></TR>
+<TR class="b">
+<TD class="left">k</TD><TD class="left">numerictype(0, 10, 0)</TD><TD class="right">Unknown</TD><TD class="right">Unknown</TD></TR>
+<TR class="a">
+<TD class="left">m</TD><TD class="left">numerictype(0, 3, 1)</TD><TD class="right">3</TD><TD class="right">3</TD></TR>
+<TR class="b">
+<TD class="left">n</TD><TD class="left">numerictype(0, 4, 1)</TD><TD class="right">7</TD><TD class="right">7</TD></TR>
+<TR class="a">
+<TD class="left">p0</TD><TD class="left">numerictype(0, 16, 14) 1 x 7 </TD><TD class="right">0</TD><TD class="right">0.97076416015625</TD></TR>
+<TR class="b">
+<TD class="left">p1</TD><TD class="left">numerictype(0, 16, 14) 1 x 7 </TD><TD class="right">0</TD><TD class="right">0.98455810546875</TD></TR>
+<TR class="a">
+<TD class="left">r</TD><TD class="left">numerictype(1, 2, 0) 1 x 7 </TD><TD class="right">-1</TD><TD class="right">1</TD></TR>
+<TR class="b">
+<TD class="left">tmp > 1</TD><TD class="left">numerictype(1, 16, 12) 3 x 7 </TD><TD class="right">-0.864013671875</TD><TD class="right">0.86376953125</TD></TR>
+<TR class="a">
+<TD class="left">tmp > 2</TD><TD class="left">numerictype(1, 16, 12) 3 x 1 </TD><TD class="right">-0.964111328125</TD><TD class="right">1</TD></TR>
+<TR class="b">
+<TD class="left">tmp > 3</TD><TD class="left">numerictype(1, 16, 12) 1 x 7 </TD><TD class="right">0.00244140625</TD><TD class="right">1</TD></TR>
+</TABLE>
+
+</body>
+</html>

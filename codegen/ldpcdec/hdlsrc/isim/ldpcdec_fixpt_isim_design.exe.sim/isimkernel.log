@@ -1,0 +1,28 @@
+Command line:
+   ldpcdec_fixpt_isim_design.exe
+     -simmode  tcl
+     -simrunnum  0
+     -socket  53171
+
+Sun Apr  7 19:09:26 2019
+
+
+ Elaboration Time: 0.04 sec
+
+ Current Memory Usage: 166.134 Meg
+
+ Total Signals          : 34
+ Total Nets             : 508
+ Total Signal Drivers   : 66
+ Total Blocks           : 36
+ Total Primitive Blocks : 34
+ Total Processes        : 67
+ Total Traceable Variables  : 53
+ Total Scalar Nets and Variables : 231774
+
+ Total Simulation Time: 2.96 sec
+
+ Current Memory Usage: 891.875 Meg
+
+Sun Apr  7 19:09:29 2019
+

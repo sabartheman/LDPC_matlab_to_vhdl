@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sun Apr  7 16:39:19 2019
+# Process ID: 3037
+# Current directory: /home/sky/Documents/MATLAB/Low_density_parity_code/archive/codegen/call_custom_exp/hdlsrc/vivado_prj
+# Command line: vivado -mode batch -source call_custom_exp_fixpt_Xilinx_Vivado_run.tcl
+# Log file: /home/sky/Documents/MATLAB/Low_density_parity_code/archive/codegen/call_custom_exp/hdlsrc/vivado_prj/vivado.log
+# Journal file: /home/sky/Documents/MATLAB/Low_density_parity_code/archive/codegen/call_custom_exp/hdlsrc/vivado_prj/vivado.jou
+#-----------------------------------------------------------
+source call_custom_exp_fixpt_Xilinx_Vivado_run.tcl

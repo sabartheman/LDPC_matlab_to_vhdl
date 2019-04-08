@@ -1,0 +1,6 @@
+ISim P.20131013 (signature 0xfbc00daa)
+This is a Full version of ISim.
+Time resolution is 1 ps
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+at 50 ns(1): Note: **************TEST COMPLETED (PASSED)************** (/ldpcenc_fixpt_tb/).

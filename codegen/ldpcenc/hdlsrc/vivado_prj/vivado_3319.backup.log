@@ -1,0 +1,58 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sun Apr  7 12:35:29 2019
+# Process ID: 3319
+# Current directory: /home/sky/Documents/MATLAB/Low_density_parity_code/codegen/ldpcenc/hdlsrc/vivado_prj
+# Command line: vivado -mode batch -source ldpcenc_fixpt_Xilinx_Vivado_run.tcl
+# Log file: /home/sky/Documents/MATLAB/Low_density_parity_code/codegen/ldpcenc/hdlsrc/vivado_prj/vivado.log
+# Journal file: /home/sky/Documents/MATLAB/Low_density_parity_code/codegen/ldpcenc/hdlsrc/vivado_prj/vivado.jou
+#-----------------------------------------------------------
+source ldpcenc_fixpt_Xilinx_Vivado_run.tcl
+# set myTool "Xilinx Vivado 2017.4"
+# set myProject "ldpcenc_fixpt_vivado"
+# set myProjectFile "ldpcenc_fixpt_vivado.xpr"
+# set myTopLevelEntity "ldpcenc_fixpt"
+# set Family "Artix7"
+# set Device "xc7a200tl"
+# set Package "fbg676"
+# set Speed "-2L"
+# set MapTimePathNumber "3"
+# set MapTimeAdvAnalysis "True"
+# set PARTimePathNumber "3"
+# set PARTimeAdvAnalysis "True"
+# puts "### Open existing $myTool project \/home\/sky\/Documents\/MATLAB\/Low_density_parity_code\/codegen\/ldpcenc\/hdlsrc\/vivado_prj\/ldpcenc_fixpt_vivado.xpr"
+### Open existing Xilinx Vivado 2017.4 project /home/sky/Documents/MATLAB/Low_density_parity_code/codegen/ldpcenc/hdlsrc/vivado_prj/ldpcenc_fixpt_vivado.xpr
+# open_project ${myProject}
+Scanning sources...
+Finished scanning sources
+# puts "### Running PostMapTiming in $myTool ..."
+### Running PostMapTiming in Xilinx Vivado 2017.4 ...
+# open_run synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a200tlfbg676-2L
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
+INFO: [Device 21-403] Loading part xc7a200tlfbg676-2L
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 1465.980 ; gain = 334.352 ; free physical = 7062 ; free virtual = 11151
+# report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths $MapTimePathNumber -nworst $MapTimePathNumber -name timing_post_map -file timing_post_map.rpt
+WARNING: [Common 17-708] report_timing_summary: The '-name' option will be ignored because it is only relevant in GUI mode.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2L, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+report_timing_summary: Time (s): cpu = 00:00:08 ; elapsed = 00:00:15 . Memory (MB): peak = 1830.848 ; gain = 364.867 ; free physical = 6785 ; free virtual = 10898
+# source -quiet "/usr/local/MATLAB/R2018b/toolbox/hdlcoder/hdlcommon/+downstreamtools/extractVivadoTiming.tcl"
+# extracTimingReport ${myTopLevelEntity}_preroute.tvr
+# puts "### PostMapTiming Complete."
+### PostMapTiming Complete.
+# puts "### Close $myTool project."
+### Close Xilinx Vivado 2017.4 project.
+# close_project
+INFO: [Common 17-206] Exiting Vivado at Sun Apr  7 12:36:03 2019...

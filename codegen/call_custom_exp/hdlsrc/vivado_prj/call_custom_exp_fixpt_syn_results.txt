@@ -1,0 +1,275 @@
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+source call_custom_exp_fixpt_Xilinx_Vivado_run.tcl
+### Open existing Xilinx Vivado 2017.4 project /home/sky/Documents/MATLAB/Low_density_parity_code/codegen/call_custom_exp/hdlsrc/vivado_prj/call_custom_exp_fixpt_vivado.xpr
+Scanning sources...
+Finished scanning sources
+### Running Synthesis in Xilinx Vivado 2017.4 ...
+[Fri Apr  5 18:49:38 2019] Launched synth_1...
+Run output will be captured here: /home/sky/Documents/MATLAB/Low_density_parity_code/codegen/call_custom_exp/hdlsrc/vivado_prj/call_custom_exp_fixpt_vivado.runs/synth_1/runme.log
+[Fri Apr  5 18:49:39 2019] Waiting for synth_1 to finish...
+*** Running vivado
+    with args -log call_custom_exp_fixpt.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source call_custom_exp_fixpt.tcl
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+source call_custom_exp_fixpt.tcl -notrace
+Command: synth_design -top call_custom_exp_fixpt -part xc7a200tlfbg676-2L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200tl'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200tl'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 17559 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1209.996 ; gain = 65.000 ; free physical = 3197 ; free virtual = 10509
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'call_custom_exp_fixpt' [/home/sky/Documents/MATLAB/Low_density_parity_code/codegen/call_custom_exp/hdlsrc/call_custom_exp_fixpt.vhd:37]
+INFO: [Synth 8-256] done synthesizing module 'call_custom_exp_fixpt' (1#1) [/home/sky/Documents/MATLAB/Low_density_parity_code/codegen/call_custom_exp/hdlsrc/call_custom_exp_fixpt.vhd:37]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1251.527 ; gain = 106.531 ; free physical = 3216 ; free virtual = 10519
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1251.527 ; gain = 106.531 ; free physical = 3217 ; free virtual = 10521
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a200tlfbg676-2L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1259.531 ; gain = 114.535 ; free physical = 3217 ; free virtual = 10521
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a200tlfbg676-2L
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1283.555 ; gain = 138.559 ; free physical = 3197 ; free virtual = 10500
+---------------------------------------------------------------------------------
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     17 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     11 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module call_custom_exp_fixpt 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     17 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     11 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 740 (col length:100)
+BRAMs: 730 (col length: RAMB18 100 RAMB36 50)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP tmp2, operation Mode is: (D+(A:0x1400))*(B:0x31f3).
+DSP Report: operator tmp2 is absorbed into DSP tmp2.
+DSP Report: operator tmp3 is absorbed into DSP tmp2.
+DSP Report: Generating DSP ARG, operation Mode is: A*B.
+DSP Report: operator ARG is absorbed into DSP ARG.
+DSP Report: Generating DSP y0, operation Mode is: C+(D-A)*B.
+DSP Report: operator y0 is absorbed into DSP y0.
+DSP Report: operator ARG is absorbed into DSP y0.
+DSP Report: operator ARG0 is absorbed into DSP y0.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 1463.453 ; gain = 318.457 ; free physical = 3121 ; free virtual = 10419
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+ROM:
++----------------------+------------+---------------+----------------+
+|Module Name           | RTL Object | Depth x Width | Implemented As | 
++----------------------+------------+---------------+----------------+
+|call_custom_exp_fixpt | LUT[0]     | 1024x14       | LUT            | 
+|call_custom_exp_fixpt | LUT[0]     | 1024x14       | LUT            | 
+|call_custom_exp_fixpt | LUT[0]     | 1024x14       | LUT            | 
+|call_custom_exp_fixpt | LUT[0]     | 1024x14       | LUT            | 
++----------------------+------------+---------------+----------------+
+DSP: Preliminary Mapping  Report (see note below)
++----------------------+---------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name           | DSP Mapping               | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------------+---------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|call_custom_exp_fixpt | (D+(A:0x1400))*(B:0x31f3) | 14     | 15     | -      | 14     | 30     | 0    | 0    | -    | 0    | 0     | 0    | 0    | 
+|call_custom_exp_fixpt | A*B                       | 17     | 15     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|call_custom_exp_fixpt | C+(D-A)*B                 | 16     | 15     | 19     | 16     | 19     | 0    | 0    | 0    | 0    | 0     | 0    | 0    | 
++----------------------+---------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 1463.453 ; gain = 318.457 ; free physical = 3122 ; free virtual = 10419
+---------------------------------------------------------------------------------
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 1463.453 ; gain = 318.457 ; free physical = 3120 ; free virtual = 10417
+---------------------------------------------------------------------------------
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 1463.453 ; gain = 318.457 ; free physical = 3120 ; free virtual = 10417
+---------------------------------------------------------------------------------
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 1463.453 ; gain = 318.457 ; free physical = 3120 ; free virtual = 10417
+---------------------------------------------------------------------------------
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 1463.453 ; gain = 318.457 ; free physical = 3120 ; free virtual = 10417
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 1463.453 ; gain = 318.457 ; free physical = 3120 ; free virtual = 10417
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 1463.453 ; gain = 318.457 ; free physical = 3120 ; free virtual = 10417
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 1463.453 ; gain = 318.457 ; free physical = 3120 ; free virtual = 10417
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |CARRY4  |     6|
+|2     |DSP48E1 |     3|
+|3     |LUT1    |     1|
+|4     |LUT2    |    21|
+|5     |LUT3    |    20|
+|6     |LUT4    |    10|
+|7     |LUT5    |    24|
+|8     |LUT6    |   209|
+|9     |MUXF7   |    63|
+|10    |MUXF8   |    22|
+|11    |IBUF    |    14|
+|12    |OBUF    |    14|
++------+--------+------+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   407|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 1463.453 ; gain = 318.457 ; free physical = 3120 ; free virtual = 10417
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 1463.453 ; gain = 318.457 ; free physical = 3121 ; free virtual = 10419
+Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 1463.461 ; gain = 318.457 ; free physical = 3121 ; free virtual = 10419
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 108 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+INFO: [Common 17-83] Releasing license: Synthesis
+11 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 1580.480 ; gain = 448.855 ; free physical = 3122 ; free virtual = 10396
+INFO: [Common 17-1381] The checkpoint '/home/sky/Documents/MATLAB/Low_density_parity_code/codegen/call_custom_exp/hdlsrc/vivado_prj/call_custom_exp_fixpt_vivado.runs/synth_1/call_custom_exp_fixpt.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file call_custom_exp_fixpt_utilization_synth.rpt -pb call_custom_exp_fixpt_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.09 . Memory (MB): peak = 1604.492 ; gain = 0.000 ; free physical = 3122 ; free virtual = 10395
+INFO: [Common 17-206] Exiting Vivado at Fri Apr  5 18:50:11 2019...
+[Fri Apr  5 18:50:11 2019] synth_1 finished
+wait_on_run: Time (s): cpu = 00:00:26 ; elapsed = 00:00:33 . Memory (MB): peak = 1144.992 ; gain = 0.000 ; free physical = 3610 ; free virtual = 10884
+### Synthesis Complete.
+### Close Xilinx Vivado 2017.4 project.
+INFO: [Common 17-206] Exiting Vivado at Fri Apr  5 18:50:11 2019...
+Elapsed time is 40.7437 seconds.

@@ -1,0 +1,4 @@
+
+Warnings: 
+
+File: /home/sky/Documents/MATLAB/Low_density_parity_code/custom_exp.m, line : 4, column : 9. Function 'exp' not supported for fixed-point conversion.

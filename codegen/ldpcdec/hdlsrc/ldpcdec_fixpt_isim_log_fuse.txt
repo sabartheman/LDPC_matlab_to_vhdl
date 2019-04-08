@@ -1,0 +1,24 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -f ldpcdec_fixpt_tb_simprj.do 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 12
+Turning on mult-threading, number of parallel sub-compilation jobs: 24 
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 113588 KB
+Fuse CPU Usage: 1570 ms
+Compiling package standard
+Compiling package textio
+Compiling package std_logic_1164
+Compiling package std_logic_textio
+Compiling package numeric_std
+Compiling package ldpcdec_fixpt_pkg
+Compiling package ldpcdec_fixpt_tb_pkg
+Compiling architecture rtl of entity ldpcdec_fixpt [ldpcdec_fixpt_default]
+Compiling architecture rtl of entity ldpcdec_fixpt_tb
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 10 VHDL Units
+Built simulation executable ldpcdec_fixpt_isim_design.exe
+Fuse Memory Usage: 1737712 KB
+Fuse CPU Usage: 1750 ms
+GCC CPU Usage: 2080 ms
