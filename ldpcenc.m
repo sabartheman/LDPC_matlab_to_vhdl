@@ -13,12 +13,15 @@
 
 function codedout = ldpcenc(m)
 
+
+
 %pre-allocating, hdl-coder doesn't like passing arrays, since vhdl doesn't
 %have any support for passing an array
-G = [1,1,0,1,0,0,0;
-     0,1,1,0,1,0,0;
-     1,1,1,0,0,1,0;
-     1,0,1,0,0,0,1];
+%a systematic generator matrix for LDPC codes
+G = [1,0,0,0,1,1,1;
+     0,1,0,0,1,1,0;
+     0,0,1,0,1,0,1;
+     0,0,0,1,0,1,1];
 
 %might be able to replace this with a xor gate and a multiply, but will
 %leave for now

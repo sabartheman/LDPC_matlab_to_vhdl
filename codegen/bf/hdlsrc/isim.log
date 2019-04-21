@@ -1,0 +1,10 @@
+ISim log file
+Running: ./bf_fixpt_isim_design.exe -tclbatch bf_fixpt_tb_sim.do 
+ISim P.20131013 (signature 0xfbc00daa)
+This is a Full version of ISim.
+Time resolution is 1 ps
+# run all
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+at 40 ns(1): Note: **************TEST COMPLETED (PASSED)************** (/bf_fixpt_tb/).
+# quit

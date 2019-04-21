@@ -1,0 +1,6 @@
+
+Warnings: 
+
+File: /home/sky/Documents/MATLAB/Low_density_parity_code/bf.m, line : 33, column : 16. The expression 'max = tmp(j)' was not executed during simulation. Consider using a more thorough testbench.
+File: /home/sky/Documents/MATLAB/Low_density_parity_code/bf.m, line : 34, column : 21. The expression 'error(j) = tmp(j)' was not executed during simulation. Consider using a more thorough testbench.
+File: /home/sky/Documents/MATLAB/Low_density_parity_code/bf.m, line : 40, column : 16. The expression 'r(j) = ~r(j)' was not executed during simulation. Consider using a more thorough testbench.
